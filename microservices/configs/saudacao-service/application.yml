@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: saudacao-service
+  profiles:
+    active:
+    - pt
+saudacao-service:
+  saudacao: Hello
+  nome-padrao: World
