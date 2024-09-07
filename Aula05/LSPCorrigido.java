@@ -3,9 +3,9 @@ public class LSPCorrigido {
         Cubo cubo = new Cubo(2);
         imprimeArea(cubo);
         imprimeVolume(cubo);
-        Quadrado ret = new Quadrado(3);
-        imprimeArea(ret);
-        imprimeVolume(ret);
+        Quadrado quad = new Quadrado(3);
+        imprimeArea(quad);
+        imprimeVolume(quad);
     }
     static void imprimeArea(FormaGeometrica forma) {
         System.out.println(forma.calculaArea());
@@ -50,3 +50,4 @@ class Quadrado extends FormaBidimensional {
         return lado * lado;
     }
 }
+

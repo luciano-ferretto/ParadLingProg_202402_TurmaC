@@ -1,0 +1,15 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/luciano-ferretto/ParadLingProg_202402_TurmaC
+          default-label: main
+          search-paths:
+          - 'microservices/configs/{application}'
+          #username: 
+          #password:

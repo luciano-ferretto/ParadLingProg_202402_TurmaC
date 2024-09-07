@@ -46,7 +46,8 @@ class Quadrado extends FormaGeometrica {
     }
     @Override
     double calculaVolume() {
-        return 0;
-        //throw new UnsupportedOperationException("Unsupported method 'calculaVolume'");
+        //return 0;
+        throw new UnsupportedOperationException(
+            "Unsupported method 'calculaVolume'");
     }
 }
