@@ -1,5 +1,5 @@
 server:
-  port: 8100
+  port: 8000
 spring:
   application:
     name: produto-service
@@ -14,3 +14,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  flyway:
+    locations:
+    - classpath:/db_migration
