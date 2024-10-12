@@ -21,6 +21,16 @@ public class ProdutoEntity {
 	
 	@Transient
 	private String ambiente;
+	@Transient
+	private double valorConvertido;
+
+	public double getValorConvertido() {
+		return valorConvertido;
+	}
+
+	public void setValorConvertido(double valorConvertido) {
+		this.valorConvertido = valorConvertido;
+	}
 
 	public Integer getId() {
 		return id;
