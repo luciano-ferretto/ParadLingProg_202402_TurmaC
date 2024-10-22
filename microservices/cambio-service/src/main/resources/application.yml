@@ -17,6 +17,10 @@ spring:
   flyway:
     locations:
     - classpath:/db_migration
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=500,expireAfterWrite=10m
 management:
   endpoints:
     web:
