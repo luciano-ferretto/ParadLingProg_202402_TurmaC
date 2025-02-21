@@ -1,0 +1,34 @@
+services:
+  eureka-service:
+    image: eureka-service:0.0.1-SNAPSHOT
+    ports:
+      - "8761:8761"
+  cambio-db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: cambio_db
+#    ports: 
+#      - "5432:5432"
+  cambio-service:
+    image: cambio-service:0.0.1-SNAPSHOT
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://cambio-db:5432/cambio_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-service:8761/eureka
+    depends_on:
+      - cambio-db
+      - eureka-service
+    deploy:
+      replicas: 2
+  api-gateway-service:
+    image: api-gateway-service:0.0.1-SNAPSHOT
+    ports:
+      - "8765:8765"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-service:8761/eureka
+    depends_on:
+      - cambio-service
+      - eureka-service
